@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#080b10">
+    <title>We Buy Stake IDs - Instant Telegram Payout</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1750187319539438');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1750187319539438&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700;800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #080b10;
+            --card-bg: #0f1520;
+            --neon-green: #00ff66;
+            --neon-green-glow: rgba(0, 255, 102, 0.35);
+            --telegram-blue: #0088cc;
+            --telegram-glow: rgba(0, 136, 204, 0.6);
+            --gold: #ffcc00;
+            --cyber-blue: #00e5ff;
+            --text-main: #ffffff;
+            --text-muted: #8a99ad;
+            --border-color: #1e2a3b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        body {
+            padding: 12px 10px;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 255, 102, 0.08) 0%, transparent 60%),
+                radial-gradient(circle at 50% 100%, rgba(0, 136, 204, 0.08) 0%, transparent 60%);
+        }
+
+        /* Fluid Main Container */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border: 2px solid var(--neon-green);
+            border-radius: 20px;
+            padding: clamp(16px, 5vw, 24px);
+            box-shadow: 0 0 25px var(--neon-green-glow);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Brand Header & Hero Title */
+        .brand-header {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(22px, 6vw, 28px);
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(28px, 8vw, 38px);
+            font-weight: 900;
+            color: var(--neon-green);
+            text-transform: uppercase;
+            text-shadow: 0 0 16px var(--neon-green-glow);
+            line-height: 1.05;
+            margin-top: 2px;
+        }
+
+        .sub-tag {
+            background: var(--neon-green);
+            color: #000000;
+            font-weight: 900;
+            font-size: clamp(11px, 3.4vw, 13px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px 0 16px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 12px var(--neon-green-glow);
+        }
+
+        /* ID Visual Component */
+        .id-card {
+            background: linear-gradient(135deg, #16202e 0%, #0d131c 100%);
+            border: 1px solid var(--neon-green);
+            border-radius: 12px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+            box-shadow: inset 0 0 15px rgba(0, 255, 102, 0.08);
+        }
+
+        .id-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .verified-badge {
+            color: var(--neon-green);
+            font-size: 12px;
+            border: 1px solid var(--neon-green);
+            padding: 3px 9px;
+            border-radius: 12px;
+            background: rgba(0, 255, 102, 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .id-subtext {
+            font-size: clamp(11px, 3.2vw, 13px);
+            color: var(--neon-green);
+            margin-top: 8px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        /* Tiers List */
+        .tier-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .tier-item {
+            background: #141c28;
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--neon-green);
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 52px;
+        }
+
+        .tier-left {
+            text-align: left;
+        }
+
+        .tier-percent {
+            font-size: clamp(16px, 4.8vw, 19px);
+            font-weight: 900;
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1;
+        }
+
+        .tier-label {
+            font-size: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-top: 2px;
+        }
+
+        .tier-value {
+            font-size: clamp(15px, 4.5vw, 18px);
+            font-weight: 900;
+            color: var(--neon-green);
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Feature Grid 2x2 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feature-box {
+            background: #121924;
+            border: 1px solid var(--border-color);
+            padding: 10px 8px;
+            border-radius: 8px;
+            font-size: clamp(10px, 2.9vw, 11px);
+            font-weight: 700;
+            color: #d1d5db;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 56px;
+            text-transform: uppercase;
+        }
+
+        .feature-box i {
+            color: var(--neon-green);
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        /* Telegram CTA Button */
+        .cta-wrapper {
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        .btn-telegram-large {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            min-height: 58px;
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(18px, 5.5vw, 22px);
+            font-weight: 800;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0088cc 0%, #00a6ff 100%);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px var(--telegram-glow);
+            border: 1px solid #33b5ff;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            animation: pulse-glow 2.2s infinite ease-in-out;
+        }
+
+        .btn-telegram-large i {
+            font-size: clamp(22px, 6vw, 26px);
+        }
+
+        /* Active / Touch State Feedback */
+        .btn-telegram-large:active {
+            transform: scale(0.96) translateY(2px);
+            box-shadow: 0 0 10px var(--telegram-glow);
+            filter: brightness(0.9);
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 12px rgba(0, 136, 204, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 28px rgba(0, 166, 255, 0.9);
+            }
+            100% {
+                box-shadow: 0 0 12px rgba(0, 136, 204, 0.4);
+            }
+        }
+
+        /* Mobile Adjustments for ultra-small screens */
+        @media (max-width: 360px) {
+            .container {
+                padding: 14px 10px;
+            }
+            .tier-item {
+                padding: 8px 10px;
+            }
+            .feature-box {
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="brand-header"><i class="fa-solid fa-gamepad" style="color: var(--neon-green); margin-right: 6px;"></i> STAKE</div>
+        <div class="hero-title">WE BUY STAKE IDS</div>
+        <div class="sub-tag">JITNA JYADA % – UTNI JYADA VALUE!</div>
+
+        <!-- Verified ID Visual Card -->
+        <div class="id-card">
+            <div class="id-card-header">
+                <span>STAKE PLAYER ID</span>
+                <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> VERIFIED</span>
+            </div>
+            <div class="id-subtext">
+                ANY ID • ANY LEVEL • WE BUY ALL
+            </div>
+        </div>
+
+        <!-- Tier Pricing List -->
+        <div class="tier-list">
+            <div class="tier-item" style="border-left-color: var(--neon-green);">
+                <div class="tier-left">
+                    <div class="tier-percent">90%+</div>
+                    <div class="tier-label">HIGHEST VALUE</div>
+                </div>
+                <div class="tier-value">$$$$$</div>
+            </div>
+
+            <div class="tier-item" style="border-left-color: var(--gold);">
+                <div class="tier-left">
+                    <div class="tier-percent">90 - 91%</div>
+                    <div class="tier-label">HIGH VALUE</div>
+                </div>
+                <div class="tier-value" style="color: var(--gold);">$$$$</div>
+            </div>
+
+            <div class="tier-item" style="border-left-color: var(--cyber-blue);">
+                <div class="tier-left">
+                    <div class="tier-percent">85 - 89%</div>
+                    <div class="tier-label">GOOD VALUE</div>
+                </div>
+                <div class="tier-value" style="color: var(--cyber-blue);">$$$</div>
+            </div>
+
+            <div class="tier-item" style="border-left-color: #9ca3af;">
+                <div class="tier-left">
+                    <div class="tier-percent">60 - 84%</div>
+                    <div class="tier-label">FAIR VALUE</div>
+                </div>
+                <div class="tier-value" style="color: #9ca3af;">$$</div>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fa-solid fa-tag"></i>
+                BEST PRICES GUARANTEED
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-bolt"></i>
+                INSTANT PAYMENT
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-headset"></i>
+                24/7 SUPPORT
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-shield-halved"></i>
+                NO LIMIT WE BUY ALL
+            </div>
+        </div>
+
+        <!-- High Priority Telegram CTA -->
+        <div class="cta-wrapper">
+            <a href="http://t.me/Stakedealer" 
+               class="btn-telegram-large" 
+               onclick="fbq('track', 'Lead');">
+                <i class="fa-brands fa-telegram"></i> SELL ON TELEGRAM
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
